@@ -19,6 +19,8 @@ import {
 } from '@/components/ui/Form'
 import { Input } from '@/components/ui/Input'
 
+import { navigationConfig } from '@/config/navigation.config'
+
 const registerSchema = z.object({
 	name: z.string().min(1, { message: 'Имя обязательно' }),
 	email: z.email({ message: 'Введите корректный адрес электронной почты' }),
@@ -35,7 +37,7 @@ export function RegisterForm() {
 
 	const { mutate, isPending } = useRegisterMutation({
 		onSuccess() {
-			router.push('/dashboard')
+			router.push(navigationConfig.dashboard)
 		}
 	})
 
@@ -58,7 +60,7 @@ export function RegisterForm() {
 			description='Заполните форму ниже, чтобы создать аккаунт'
 			bottomText='Уже есть аккаунт?'
 			bottomTextLink='Войти'
-			bottomLinkHref='/auth/login'
+			bottomLinkHref={navigationConfig.login}
 		>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>

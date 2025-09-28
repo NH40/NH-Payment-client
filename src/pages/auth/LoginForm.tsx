@@ -19,6 +19,8 @@ import {
 } from '@/components/ui/Form'
 import { Input } from '@/components/ui/Input'
 
+import { navigationConfig } from '@/config/navigation.config'
+
 const loginSchema = z.object({
 	email: z.email({ message: 'Введите корректный адрес электронной почты' }),
 	password: z
@@ -34,7 +36,7 @@ export function LoginForm() {
 
 	const { mutate, isPending } = useLoginMutation({
 		onSuccess() {
-			router.push('/dashboard')
+			router.push(navigationConfig.dashboard)
 		}
 	})
 
@@ -56,7 +58,7 @@ export function LoginForm() {
 			description='Введите свои данные для входа в аккаунт'
 			bottomText='Еще нет аккаунта?'
 			bottomTextLink='Регистрация'
-			bottomLinkHref='/auth/register'
+			bottomLinkHref={navigationConfig.register}
 		>
 			<Form {...form}>
 				<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
