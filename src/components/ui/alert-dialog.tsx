@@ -3,7 +3,7 @@
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 import type { ComponentProps } from 'react'
 
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/Button'
 
 import { cn } from '@/lib/utils'
 
@@ -17,10 +17,7 @@ function AlertDialogTrigger({
 	...props
 }: ComponentProps<typeof AlertDialogPrimitive.Trigger>) {
 	return (
-		<AlertDialogPrimitive.Trigger
-			data-slot='alert-dialog-trigger'
-			{...props}
-		/>
+		<AlertDialogPrimitive.Trigger data-slot='alert-dialog-trigger' {...props} />
 	)
 }
 
@@ -28,10 +25,7 @@ function AlertDialogPortal({
 	...props
 }: ComponentProps<typeof AlertDialogPrimitive.Portal>) {
 	return (
-		<AlertDialogPrimitive.Portal
-			data-slot='alert-dialog-portal'
-			{...props}
-		/>
+		<AlertDialogPrimitive.Portal data-slot='alert-dialog-portal' {...props} />
 	)
 }
 
@@ -74,10 +68,7 @@ function AlertDialogHeader({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			data-slot='alert-dialog-header'
-			className={cn(
-				'flex flex-col gap-2 text-center sm:text-left',
-				className
-			)}
+			className={cn('flex flex-col gap-2 text-center sm:text-left', className)}
 			{...props}
 		/>
 	)
@@ -148,14 +139,14 @@ function AlertDialogCancel({
 
 export {
 	AlertDialog,
-	AlertDialogPortal,
-	AlertDialogOverlay,
-	AlertDialogTrigger,
-	AlertDialogContent,
-	AlertDialogHeader,
-	AlertDialogFooter,
-	AlertDialogTitle,
-	AlertDialogDescription,
 	AlertDialogAction,
-	AlertDialogCancel
+	AlertDialogCancel,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogOverlay,
+	AlertDialogPortal,
+	AlertDialogTitle,
+	AlertDialogTrigger
 }

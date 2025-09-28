@@ -15,7 +15,7 @@ import {
 
 import { cn } from '@/lib/utils'
 
-import { Label } from './label'
+import { Label } from './Label'
 
 const Form = FormProvider
 
@@ -106,8 +106,7 @@ function FormLabel({
 }
 
 function FormControl({ ...props }: ComponentProps<typeof Slot>) {
-	const { error, formItemId, formDescriptionId, formMessageId } =
-		useFormField()
+	const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
 	return (
 		<Slot
@@ -158,12 +157,12 @@ function FormMessage({ className, ...props }: ComponentProps<'p'>) {
 }
 
 export {
-	useFormField,
 	Form,
-	FormItem,
-	FormLabel,
 	FormControl,
 	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
 	FormMessage,
-	FormField
+	useFormField
 }

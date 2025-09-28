@@ -83,10 +83,10 @@ function CardFooter({ className, ...props }: ComponentProps<'div'>) {
 
 export {
 	Card,
-	CardHeader,
-	CardFooter,
-	CardTitle,
 	CardAction,
+	CardContent,
 	CardDescription,
-	CardContent
+	CardFooter,
+	CardHeader,
+	CardTitle
 }
