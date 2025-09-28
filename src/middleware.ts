@@ -35,5 +35,5 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: [navigationConfig.dashboard, '/auth/:path*']
+	matcher: ['/dashboard', '/auth/:path*']
 }
