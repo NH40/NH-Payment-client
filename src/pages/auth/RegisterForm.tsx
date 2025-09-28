@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import z from 'zod'
 
+import { useRegisterMutation } from '@/api/hooks/useRegisterMutation'
+
 import { AuthWrapper } from '@/components/auth/AuthWrapper'
 import { Button } from '@/components/ui/Button'
 import {
